@@ -31,7 +31,7 @@ jobs:
 
             - name: Test Airflow DAG Integrity
               run: |
-                python -c "from airflow.models.dagbag import DagBag; DagBag('airflow/dags', include_examples=False).check_dag_integrity()"
+                python -c "from airflow.models.dagbag import DagBag; dag_bag = DagBag('airflow/dags', include_examples=False); assert not dag_bag.import_errors, f'DAG import errors found: {dag_bag.import_errors}'"
 
             - name: Build Docker images with Docker Compose
               run: |
