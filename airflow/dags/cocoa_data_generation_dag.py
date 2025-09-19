@@ -8,7 +8,7 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 
 # Define the number of files to generate
-NUM_FILES_TO_GENERATE = 10
+NUM_FILES_TO_GENERATE = 3
 
 # Define the absolute path to the scripts directory
 SCRIPTS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
@@ -18,6 +18,7 @@ if SCRIPTS_DIR not in sys.path:
     sys.path.append(SCRIPTS_DIR)
 
 # Import the function from your script
+# noqa: E402
 from generate_data import generate_and_save_multiple_files
 
 def generate_and_upload_cocoa_data(**kwargs):
