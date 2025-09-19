@@ -30,6 +30,8 @@ jobs:
                 ruff check . 
 
             - name: Test Airflow DAG Integrity
+              env:
+                PYTHONPATH: ${{ github.workspace }}/scripts
               run: |
                 python -c "from airflow.models.dagbag import DagBag; dag_bag = DagBag('airflow/dags', include_examples=False); assert not dag_bag.import_errors, f'DAG import errors found: {dag_bag.import_errors}'"
 
