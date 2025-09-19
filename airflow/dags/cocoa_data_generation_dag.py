@@ -18,8 +18,7 @@ if SCRIPTS_DIR not in sys.path:
     sys.path.append(SCRIPTS_DIR)
 
 # Import the function from your script
-# noqa: E402
-from generate_data import generate_and_save_multiple_files
+from generate_data import generate_and_save_multiple_files  # noqa: E402
 
 def generate_and_upload_cocoa_data(**kwargs):
     """
