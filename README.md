@@ -35,6 +35,9 @@ The platform includes:
 - **Secure Configuration**: Environment variables for sensitive data; custom Airflow image with pinned dependencies.
 
 ## Architecture
+<img src="images/Mini Data Platform architecture.png" alt="Logo" width="1000"/>
+<img src="images/DAG.png" alt="Logo" width="1000"/>
+
 The platform uses a layered architecture:
 1. **Data Generation**: The `hourly_cocoa_data_generation_minio` DAG generates 10 CSVs hourly with random records (1000–10,000) using `generate_data.py` and uploads to MinIO’s `landing/` bucket.
 2. **Ingestion**: CSVs are stored in MinIO’s `landing/` bucket.
