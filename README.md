@@ -150,6 +150,9 @@ The `cocoa_supply_chain_dag` processes files daily:
 4. Create queries (e.g., `SELECT region, SUM(shipment_value_usd) FROM cocoa_shipments GROUP BY region`).
 5. Build dashboards for metrics like shipment value, quality trends, or regional distribution.
 
+<img src="images/Metabase Dashboard.png" alt="Logo" width="1000"/>
+
+
 ## CI/CD Pipeline
 Defined in `.github/workflows/ci-cd-pipeline.yml`:
 - **Pull Request**:
